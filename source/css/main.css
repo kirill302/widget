@@ -78,9 +78,6 @@ body {
 
 .widget {
   position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   -webkit-transition: .5s;
   transition: .5s;
   right: -400px;
@@ -91,6 +88,9 @@ body {
 
 @media (min-width: 768px) {
   .widget {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
     height: 600px;
     max-width: 350px;
   }
@@ -98,6 +98,7 @@ body {
 
 @media (max-width: 768px) {
   .widget {
+    top: 0;
     height: 100vh;
     min-height: 100vh;
     width: 100vw;
