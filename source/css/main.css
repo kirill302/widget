@@ -80,7 +80,6 @@ body {
   position: fixed;
   -webkit-transition: .5s;
   transition: .5s;
-  overflow: hidden;
   -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
           filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
