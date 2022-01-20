@@ -100,7 +100,6 @@ body {
   .widget {
     height: 100vh;
     min-height: 100vh;
-    min-height: -webkit-fill-availabe;
     width: 100vw;
   }
 }

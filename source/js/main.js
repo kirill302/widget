@@ -48,8 +48,8 @@ widgetClose.addEventListener('click', () => {
 // высота страницы
 
 
-if (size < 768) {
-  let height = window.innerHeight;
-  const video = document.querySelector('.widget');
-  video.style.height = `${height}px`
-}
+// if (size < 768) {
+//   let height = window.innerHeight;
+//   const video = document.querySelector('.widget');
+//   video.style.height = `${height}px`
+// }
