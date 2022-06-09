@@ -5,27 +5,85 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel='stylesheet' href='./source/css/main.min.css'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" />
+	<link rel='stylesheet' href='./source/css/main.css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<title>Document</title>
 </head>
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	.wrapper {
+		height: 300vh;
+		font-size: 16px;
+	}
+
+	p {
+		margin-bottom: 10px;
+		color: #333;
+	}
+
+
+
+	button {
+		background: none;
+		display: block;
+		border: none;
+		text-align: inherit;
+	}
+
+	button:focus {
+		border: none;
+		background: none;
+		outline: none;
+	}
+
+	.panel {
+		position: relative;
+	}
+
+	.textarea-wrap {
+		position: relative;
+		width: 100%;
+	}
+
+	.textarea-wrap textarea {
+		width: 100%;
+		padding-right: 55px;
+	}
+
+	.chat__sub {
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 100%;
+
+		width: 40px;
+		height: 40px;
+		transition: all .1s;
+	}
+
+	.chat__sub:hover {
+		filter: brightness(110%);
+		transition: all .1s;
+	}
+
+	.chat__sub img {
+		width: 100%;
+		height: auto;
+	}
+</style>
 
 <body>
 	<div class="wrapper">
-		<div class="widget-btn">
-			<img src="./avatar.jpg" alt="">
-		</div>
-		<div class="widget">
-			<div class="video-chat">
-				<!-- класс vertical horizontal для div.video для вертикального и горизонтального видео -->
-				<div class="video vertical">
-					<video preload="auto" playsInline data-setup="{}" muted>
-						<source id="" src="video.mp4" type="video/mp4" />
-						<source id="" src="url" type="video/webm" />
-						Your browser does not support the video or formats.
-					</video>
-				</div>
-				<div class="header">
+
+		<div class="video-widget">
+			<div class="video-widget__inner video-chat">
+				<div class="video-widget__header video-widget__visible">
 					<div class="user">
 						<div class="user__ava">
 							<img src="https://via.placeholder.com/70" alt="">
@@ -43,9 +101,6 @@
 						</button>
 					</div>
 					<div>
-						<button class="close">
-
-						</button>
 						<div class="watch">
 							<button>
 								смотреть →
@@ -55,7 +110,14 @@
 
 
 				</div>
-				<div class="bottom">
+				<div class="video-widget__video vertical">
+					<video preload="auto" playsInline data-setup="{}" muted autoplay>
+						<source id="" src="video.mp4" type="video/mp4" />
+						<source id="" src="url" type="video/webm" />
+						Your browser does not support the video or formats.
+					</video>
+				</div>
+				<div class="video-widget__bottom video-widget__visible">
 					<div class="chat">
 
 						<div class="chat__list">
@@ -128,34 +190,27 @@
 
 					</div>
 					<div class="panel">
-						<textarea class="panel-textarea" style="resize: none;" type="text"
-							placeholder="Добавить комментарий"></textarea>
+						<div class="textarea-wrap">
+							<textarea class="panel-textarea" style="resize: none;" type="text"
+								placeholder="Добавить комментарий"></textarea>
 
-						<div class="panel__icons">
-							<div class="panel__icon">
-							</div>
-							<div class="panel__icon">
-							</div>
-							<div class="panel__icon">
-							</div>
-							<div class="panel__icon">
-							</div>
-							<div class="panel__icon">
-							</div>
-
-							<div class="panel__icons_hidden">
-
-							</div>
+							<button class="chat__sub">
+								<img src="./btn.png" alt="">
+							</button>
 						</div>
-
-
 					</div>
 				</div>
-
+				<div class="video-widget__footer video-widget__visible">
+					Водяной знак
+				</div>
 			</div>
+			<button class="video-widget__hide hide">
+				<span></span>
+				<span></span>
+			</button>
 		</div>
-
 	</div>
+
 </body>
 <script src="source/js/main.js"></script>
 
